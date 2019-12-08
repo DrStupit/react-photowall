@@ -1,12 +1,13 @@
 import React from 'react'
 import Photo from './Photo'
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 // Statless function - Only when method contains only a render method...
 function Photowall(props) {
   return (
     <div>
-    <a onClick={props.onNavigate} href="#AddPhoto" className='addIcon'></a>
+    <Link to="/AddPhoto" className='addIcon'></Link>
       <div className='photoGrid'>
         {props.posts.map((post, index) => (
           <Photo key={index} post={post} onRemovePhoto={props.onRemovePhoto} />
